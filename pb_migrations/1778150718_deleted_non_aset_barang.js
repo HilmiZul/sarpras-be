@@ -1,0 +1,258 @@
+/// <reference path="../pb_data/types.d.ts" />
+migrate((app) => {
+  const collection = app.findCollectionByNameOrId("pbc_1356047725");
+
+  return app.delete(collection);
+}, (app) => {
+  const collection = new Collection({
+    "createRule": "@request.auth.role = 'sarpras'",
+    "deleteRule": "@request.auth.role = 'sarpras'",
+    "fields": [
+      {
+        "autogeneratePattern": "[a-z0-9]{15}",
+        "help": "",
+        "hidden": false,
+        "id": "text3208210256",
+        "max": 15,
+        "min": 15,
+        "name": "id",
+        "pattern": "^[a-z0-9]+$",
+        "presentable": false,
+        "primaryKey": true,
+        "required": true,
+        "system": true,
+        "type": "text"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_2952154270",
+        "help": "",
+        "hidden": false,
+        "id": "relation3250233612",
+        "maxSelect": 0,
+        "minSelect": 0,
+        "name": "tahun_pengadaan",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "autogeneratePattern": "",
+        "help": "",
+        "hidden": false,
+        "id": "text2412813121",
+        "max": 0,
+        "min": 0,
+        "name": "no_sp2d",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_1826411193",
+        "help": "",
+        "hidden": false,
+        "id": "relation2620256717",
+        "maxSelect": 0,
+        "minSelect": 0,
+        "name": "sumber_aset",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "autogeneratePattern": "",
+        "help": "",
+        "hidden": false,
+        "id": "text4217270714",
+        "max": 0,
+        "min": 0,
+        "name": "kodering_belanja",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "autogeneratePattern": "",
+        "help": "",
+        "hidden": false,
+        "id": "text2832738254",
+        "max": 0,
+        "min": 0,
+        "name": "no_spk",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "autogeneratePattern": "",
+        "help": "",
+        "hidden": false,
+        "id": "text135376176",
+        "max": 0,
+        "min": 0,
+        "name": "no_ba_spj",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "help": "",
+        "hidden": false,
+        "id": "date3491513778",
+        "max": "",
+        "min": "",
+        "name": "tgl_ba_spj",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "date"
+      },
+      {
+        "autogeneratePattern": "",
+        "help": "",
+        "hidden": false,
+        "id": "text2393024868",
+        "max": 0,
+        "min": 0,
+        "name": "nama_aset_barang",
+        "pattern": "",
+        "presentable": true,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_1267859157",
+        "help": "",
+        "hidden": false,
+        "id": "relation1819970370",
+        "maxSelect": 0,
+        "minSelect": 0,
+        "name": "rincian_barang",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_370348349",
+        "help": "",
+        "hidden": false,
+        "id": "relation4280757324",
+        "maxSelect": 0,
+        "minSelect": 0,
+        "name": "satuan_barang",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "help": "",
+        "hidden": false,
+        "id": "number3113930206",
+        "max": null,
+        "min": null,
+        "name": "volume",
+        "onlyInt": false,
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "number"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_4057257552",
+        "help": "",
+        "hidden": false,
+        "id": "relation1574479526",
+        "maxSelect": 0,
+        "minSelect": 0,
+        "name": "unit_kerja",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "help": "",
+        "hidden": false,
+        "id": "bool1641115275",
+        "name": "lengkap",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "bool"
+      },
+      {
+        "autogeneratePattern": "",
+        "help": "",
+        "hidden": false,
+        "id": "text2413303337",
+        "max": 0,
+        "min": 0,
+        "name": "keterangan",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "autodate2990389176",
+        "name": "created",
+        "onCreate": true,
+        "onUpdate": false,
+        "presentable": false,
+        "system": false,
+        "type": "autodate"
+      },
+      {
+        "hidden": false,
+        "id": "autodate3332085495",
+        "name": "updated",
+        "onCreate": true,
+        "onUpdate": true,
+        "presentable": false,
+        "system": false,
+        "type": "autodate"
+      }
+    ],
+    "id": "pbc_1356047725",
+    "indexes": [
+      "CREATE INDEX `idx_bo9lbymokwx1f` ON `non_aset_barang` (`sumber_aset`)",
+      "CREATE INDEX `idx_kmcngmvkpvhk1` ON `non_aset_barang` (`tgl_ba_spj`)",
+      "CREATE INDEX `idx_kdcn23xf5g5ow` ON `non_aset_barang` (`unit_kerja`)",
+      "CREATE INDEX `idx_eyc2gbzsqnyar` ON `non_aset_barang` (`nama_aset_barang`)"
+    ],
+    "listRule": "@request.auth.id != ''",
+    "name": "non_aset_barang",
+    "system": false,
+    "type": "base",
+    "updateRule": "@request.auth.role = 'sarpras'",
+    "viewRule": "@request.auth.id != ''"
+  });
+
+  return app.save(collection);
+})
